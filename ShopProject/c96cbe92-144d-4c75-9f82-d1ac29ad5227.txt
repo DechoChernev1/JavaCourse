@@ -1,0 +1,7 @@
+Receipt ID: c96cbe92-144d-4c75-9f82-d1ac29ad5227
+Cashier Name: John Doe
+Date of Purchase: 2025-06-04
+Products Purchased: 
+- Products ID: 001, Total Price: 5.2250000000000005
+- Products ID: 002, Total Price: 7.2
+Total Amount: 12.425
