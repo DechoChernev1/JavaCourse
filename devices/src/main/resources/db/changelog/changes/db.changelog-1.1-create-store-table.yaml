@@ -1,0 +1,40 @@
+databaseChangeLog:
+  #  - preConditions:
+  #      - dbms:
+  #          type: postgresql
+  #      - runningAs:
+  #          username: postgres
+  - changeSet:
+      id: 1.1
+      author: decho
+      tagDatabase:
+        tag: "version_1.1"
+      changes:
+        - createTable:
+            tableName: store
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: location
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+
+      rollback:
+        - dropTable:
+            tableName: store
+
+
+
+

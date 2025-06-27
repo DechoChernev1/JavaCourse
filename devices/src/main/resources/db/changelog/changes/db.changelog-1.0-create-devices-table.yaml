@@ -1,0 +1,50 @@
+databaseChangeLog:
+  #  - preConditions:
+  #      - dbms:
+  #          type: postgresql
+  #      - runningAs:
+  #          username: postgres
+  - changeSet:
+      id: 1.0
+      author: decho
+      tagDatabase:
+        tag: "version_1.0"
+      changes:
+        - createTable:
+            tableName: device
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: specialty
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: location
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created
+                  type: datetime
+                  constraints:
+                    nullable: true
+
+      rollback:
+        - dropTable:
+            tableName: device
+
+
+
+

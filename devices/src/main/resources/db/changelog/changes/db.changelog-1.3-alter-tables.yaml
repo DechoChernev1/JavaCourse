@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.3
+      author: decho
+      tagDatabase:
+        tag: "version_1.3"
+      preConditions:
+      changes:
+        - addColumn:
+            tableName: device
+            columns:
+              - column:
+                  name: store_id
+                  type: int
+        - addForeignKeyConstraint:
+            baseColumnNames: store_id
+            baseTableName: device
+            constraintName: fk_device_store
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: store
+            validate: true
+        - addColumn:
+            tableName: spec
+            columns:
+              - column:
+                  name: device_id
+                  type: int
+        - addForeignKeyConstraint:
+            baseColumnNames: device_id
+            baseTableName: spec
+            constraintName: fk_spec_device
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: device
+            validate: true
+      rollback:
+        - dropColumn:
+            tableName: device
+            columnName: store_id
+        - dropColumn:
+            tableName: spec
+            columnName: device_id
+

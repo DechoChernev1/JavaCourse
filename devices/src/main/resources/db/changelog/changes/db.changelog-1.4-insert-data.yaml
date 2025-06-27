@@ -1,0 +1,280 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.4
+      author: decho
+      changes:
+        # Insert Stores
+        - insert:
+            tableName: store
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: "Store A"
+              - column:
+                  name: location
+                  value: "Location A"
+
+        - insert:
+            tableName: store
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: "Store B"
+              - column:
+                  name: location
+                  value: "Location B"
+
+        # Insert Devices for Store A
+        - insert:
+            tableName: device
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: "Device A1"
+              - column:
+                  name: specialty
+                  value: "Specialty A1"
+              - column:
+                  name: location
+                  value: "Location A1"
+              - column:
+                  name: created
+                  valueDate: "2023-01-01"
+              - column:
+                  name: store_id
+                  valueNumeric: 1
+
+        - insert:
+            tableName: device
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: "Device A2"
+              - column:
+                  name: specialty
+                  value: "Specialty A2"
+              - column:
+                  name: location
+                  value: "Location A2"
+              - column:
+                  name: created
+                  valueDate: "2023-01-02"
+              - column:
+                  name: store_id
+                  valueNumeric: 1
+
+        - insert:
+            tableName: device
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: "Device A3"
+              - column:
+                  name: specialty
+                  value: "Specialty A3"
+              - column:
+                  name: location
+                  value: "Location A3"
+              - column:
+                  name: created
+                  valueDate: "2023-01-03"
+              - column:
+                  name: store_id
+                  valueNumeric: 1
+
+        # Insert Devices for Store B
+        - insert:
+            tableName: device
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: "Device B1"
+              - column:
+                  name: specialty
+                  value: "Specialty B1"
+              - column:
+                  name: location
+                  value: "Location B1"
+              - column:
+                  name: created
+                  valueDate: "2023-02-01"
+              - column:
+                  name: store_id
+                  valueNumeric: 2
+
+        - insert:
+            tableName: device
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: "Device B2"
+              - column:
+                  name: specialty
+                  value: "Specialty B2"
+              - column:
+                  name: location
+                  value: "Location B2"
+              - column:
+                  name: created
+                  valueDate: "2023-02-02"
+              - column:
+                  name: store_id
+                  valueNumeric: 2
+
+        - insert:
+            tableName: device
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 6
+              - column:
+                  name: name
+                  value: "Device B3"
+              - column:
+                  name: specialty
+                  value: "Specialty B3"
+              - column:
+                  name: location
+                  value: "Location B3"
+              - column:
+                  name: created
+                  valueDate: "2023-02-03"
+              - column:
+                  name: store_id
+                  valueNumeric: 2
+
+        # Insert Specs for Devices
+        - insert:
+            tableName: spec
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: width
+                  valueNumeric: 100
+              - column:
+                  name: height
+                  valueNumeric: 200
+              - column:
+                  name: depth
+                  valueNumeric: 300
+              - column:
+                  name: device_id
+                  valueNumeric: 1
+
+        - insert:
+            tableName: spec
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: width
+                  valueNumeric: 110
+              - column:
+                  name: height
+                  valueNumeric: 210
+              - column:
+                  name: depth
+                  valueNumeric: 310
+              - column:
+                  name: device_id
+                  valueNumeric: 1
+
+        - insert:
+            tableName: spec
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: width
+                  valueNumeric: 120
+              - column:
+                  name: height
+                  valueNumeric: 220
+              - column:
+                  name: depth
+                  valueNumeric: 320
+              - column:
+                  name: device_id
+                  valueNumeric: 1
+
+        - insert:
+            tableName: spec
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: width
+                  valueNumeric: 130
+              - column:
+                  name: height
+                  valueNumeric: 230
+              - column:
+                  name: depth
+                  valueNumeric: 330
+              - column:
+                  name: device_id
+                  valueNumeric: 2
+
+        - insert:
+            tableName: spec
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: width
+                  valueNumeric: 140
+              - column:
+                  name: height
+                  valueNumeric: 240
+              - column:
+                  name: depth
+                  valueNumeric: 340
+              - column:
+                  name: device_id
+                  valueNumeric: 2
+
+        - insert:
+            tableName: spec
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 6
+              - column:
+                  name: width
+                  valueNumeric: 150
+              - column:
+                  name: height
+                  valueNumeric: 250
+              - column:
+                  name: depth
+                  valueNumeric: 350
+              - column:
+                  name: device_id
+                  valueNumeric: 2

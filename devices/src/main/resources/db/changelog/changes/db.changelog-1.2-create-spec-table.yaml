@@ -1,0 +1,45 @@
+databaseChangeLog:
+  #  - preConditions:
+  #      - dbms:
+  #          type: postgresql
+  #      - runningAs:
+  #          username: postgres
+  - changeSet:
+      id: 1.2
+      author: decho
+      tagDatabase:
+        tag: "version_1.2"
+      changes:
+        - createTable:
+            tableName: spec
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: width
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: height
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: depth
+                  type: varchar(45)
+                  constraints:
+                    nullable: true
+
+      rollback:
+        - dropTable:
+            tableName: spec
+
+
+
+
